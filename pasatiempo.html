@@ -10,7 +10,7 @@
         <h1>PASATIEMPO EN CASCADA</h1>
         <div class="menuDesplegable">
           <ul>
-            <li onclick="limpiarPasatiempo()"><a href="#crearPasatiempo">Crear nuevo pasatiempo vac&iacuteo</a></li>
+            <li><a href="#crearPasatiempo" onclick="limpiarPasatiempo()">Crear nuevo pasatiempo vac&iacuteo</a></li>
             <li><a href="#guardarEstado">Guardar estado actual del pasatiempo</a></li>
             <li><a href="#recuperarEstado">Recuperar estado del pasatiempo</a></li>
             <li style="float:right" onclick="acercaDe()"><a href="#about">Acerca de:</a></li>
@@ -20,106 +20,107 @@
         <div class="noMenu">
           <div class="juego" id="juego">
             <table width="400" height="400px"; border="1" cellspacing="2" cellpadding="2" bgcolor="#ffffff" id="table">
-              <tr>
-                <td><div contenteditable id="letra1P1">-</div></td>
-                <td><div contenteditable id="letra2P1">-</div></td>
-                <td><div contenteditable id="letra3P1">-</div></td>
-                <td><div contenteditable id="letra4P1">-</div></td>
-                <td>1</td>
+              <form id="datos">
+                <tr>
+                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra1P1"></td>
+                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra2P1"></form></td>
+                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra3P1"></td>
+                  <td><form id="letra4P1"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td>1</td>
 
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P2">-</div></td>
-                <td><div contenteditable id="letra2P2">-</div></td>
-                <td><div contenteditable id="letra3P2">-</div></td>
-                <td><div contenteditable id="letra4P2">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P3">-</div></td>
-                <td><div contenteditable id="letra2P3">-</div></td>
-                <td><div contenteditable id="letra3P3">-</div></td>
-                <td><div contenteditable id="letra4P3">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P4">-</div></td>
-                <td><div contenteditable id="letra2P4">-</div></td>
-                <td><div contenteditable id="letra3P4">-</div></td>
-                <td><div contenteditable id="letra4P4">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P5">-</div></td>
-                <td><div contenteditable id="letra2P5">-</div></td>
-                <td><div contenteditable id="letra3P5">-</div></td>
-                <td><div contenteditable id="letra4P5">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P6">-</div></td>
-                <td><div contenteditable id="letra2P6">-</div></td>
-                <td><div contenteditable id="letra3P6">-</div></td>
-                <td><div contenteditable id="letra4P6">-</div></td>
-                <td>2</td>               
-              </tr> 
-              <tr>
-                <td><div contenteditable id="letra1P7">-</div></td>
-                <td><div contenteditable id="letra2P7">-</div></td>
-                <td><div contenteditable id="letra3P7">-</div></td>
-                <td><div contenteditable id="letra4P7">-</div></td>
-                <td><div contenteditable id="letra5P7">-</div></td>
-                <td><div contenteditable id="letra6P7">-</div></td>
-
-                <td>3</td>               
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P8">-</div></td>
-                <td><div contenteditable id="letra2P8">-</div></td>
-                <td><div contenteditable id="letra3P8">-</div></td>
-                <td><div contenteditable id="letra4P8">-</div></td>
-                <td><div contenteditable id="letra5P8">-</div></td>
-                <td><div contenteditable id="letra6P8">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P9">-</div></td>
-                <td><div contenteditable id="letra2P9">-</div></td>
-                <td><div contenteditable id="letra3P9">-</div></td>
-                <td><div contenteditable id="letra4P9">-</div></td>
-                <td><div contenteditable id="letra5P9">-</div></td>
-                <td><div contenteditable id="letra6P9">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P10">-</div></td>
-                <td><div contenteditable id="letra2P10">-</div></td>
-                <td><div contenteditable id="letra3P10">-</div></td>
-                <td><div contenteditable id="letra4P10">-</div></td>
-                <td><div contenteditable id="letra5P10">-</div></td>
-                <td><div contenteditable id="letra6P10">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P11">-</div></td>
-                <td><div contenteditable id="letra2P11">-</div></td>
-                <td><div contenteditable id="letra3P11">-</div></td>
-                <td><div contenteditable id="letra4P11">-</div></td>
-                <td><div contenteditable id="letra5P11">-</div></td>
-                <td><div contenteditable id="letra6P11">-</div></td>
-              </tr>
-  
-              <tr>
-                <td><div contenteditable id="letra1P12">-</div></td>
-                <td><div contenteditable id="letra2P12">-</div></td>
-                <td><div contenteditable id="letra3P12">-</div></td>
-                <td><div contenteditable id="letra4P12">-</div></td>
-                <td><div contenteditable id="letra5P12">-</div></td>
-                <td><div contenteditable id="letra6P12">-</div></td>
-                <td>4</td>               
-              </tr> 
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td>2</td>               
+                </tr> 
+                <tr>
+                  <td><form id="letra1P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td>3</td>               
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                </tr>
+    
+                <tr>
+                  <td><form id="letra1P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra2P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra3P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra4P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra5P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><form id="letra6P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td>4</td>               
+                </tr> 
+            </form>
             </table>
           </div>
           
