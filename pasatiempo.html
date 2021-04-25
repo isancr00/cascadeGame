@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Pasatiempo en cascada</title>
+    </head>
+
+    <body onload="preguntaCookies()">
+        <h1>PASATIEMPO EN CASCADA</h1>
+        <div class="menuDesplegable">
+          <ul>
+            <li onclick="limpiarPasatiempo()"><a href="#crearPasatiempo">Crear nuevo pasatiempo vac&iacuteo</a></li>
+            <li><a href="#guardarEstado">Guardar estado actual del pasatiempo</a></li>
+            <li><a href="#recuperarEstado">Recuperar estado del pasatiempo</a></li>
+            <li style="float:right" onclick="acercaDe()"><a href="#about">Acerca de:</a></li>
+          </ul>
+        </div>
+
+        <div class="noMenu">
+          <div class="juego" id="juego">
+            <table width="400" height="400px"; border="1" cellspacing="2" cellpadding="2" bgcolor="#ffffff" id="table">
+              <tr>
+                <td><div contenteditable id="letra1P1">-</div></td>
+                <td><div contenteditable id="letra2P1">-</div></td>
+                <td><div contenteditable id="letra3P1">-</div></td>
+                <td><div contenteditable id="letra4P1">-</div></td>
+                <td>1</td>
+
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P2">-</div></td>
+                <td><div contenteditable id="letra2P2">-</div></td>
+                <td><div contenteditable id="letra3P2">-</div></td>
+                <td><div contenteditable id="letra4P2">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P3">-</div></td>
+                <td><div contenteditable id="letra2P3">-</div></td>
+                <td><div contenteditable id="letra3P3">-</div></td>
+                <td><div contenteditable id="letra4P3">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P4">-</div></td>
+                <td><div contenteditable id="letra2P4">-</div></td>
+                <td><div contenteditable id="letra3P4">-</div></td>
+                <td><div contenteditable id="letra4P4">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P5">-</div></td>
+                <td><div contenteditable id="letra2P5">-</div></td>
+                <td><div contenteditable id="letra3P5">-</div></td>
+                <td><div contenteditable id="letra4P5">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P6">-</div></td>
+                <td><div contenteditable id="letra2P6">-</div></td>
+                <td><div contenteditable id="letra3P6">-</div></td>
+                <td><div contenteditable id="letra4P6">-</div></td>
+                <td>2</td>               
+              </tr> 
+              <tr>
+                <td><div contenteditable id="letra1P7">-</div></td>
+                <td><div contenteditable id="letra2P7">-</div></td>
+                <td><div contenteditable id="letra3P7">-</div></td>
+                <td><div contenteditable id="letra4P7">-</div></td>
+                <td><div contenteditable id="letra5P7">-</div></td>
+                <td><div contenteditable id="letra6P7">-</div></td>
+
+                <td>3</td>               
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P8">-</div></td>
+                <td><div contenteditable id="letra2P8">-</div></td>
+                <td><div contenteditable id="letra3P8">-</div></td>
+                <td><div contenteditable id="letra4P8">-</div></td>
+                <td><div contenteditable id="letra5P8">-</div></td>
+                <td><div contenteditable id="letra6P8">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P9">-</div></td>
+                <td><div contenteditable id="letra2P9">-</div></td>
+                <td><div contenteditable id="letra3P9">-</div></td>
+                <td><div contenteditable id="letra4P9">-</div></td>
+                <td><div contenteditable id="letra5P9">-</div></td>
+                <td><div contenteditable id="letra6P9">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P10">-</div></td>
+                <td><div contenteditable id="letra2P10">-</div></td>
+                <td><div contenteditable id="letra3P10">-</div></td>
+                <td><div contenteditable id="letra4P10">-</div></td>
+                <td><div contenteditable id="letra5P10">-</div></td>
+                <td><div contenteditable id="letra6P10">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P11">-</div></td>
+                <td><div contenteditable id="letra2P11">-</div></td>
+                <td><div contenteditable id="letra3P11">-</div></td>
+                <td><div contenteditable id="letra4P11">-</div></td>
+                <td><div contenteditable id="letra5P11">-</div></td>
+                <td><div contenteditable id="letra6P11">-</div></td>
+              </tr>
+  
+              <tr>
+                <td><div contenteditable id="letra1P12">-</div></td>
+                <td><div contenteditable id="letra2P12">-</div></td>
+                <td><div contenteditable id="letra3P12">-</div></td>
+                <td><div contenteditable id="letra4P12">-</div></td>
+                <td><div contenteditable id="letra5P12">-</div></td>
+                <td><div contenteditable id="letra6P12">-</div></td>
+                <td>4</td>               
+              </tr> 
+            </table>
+          </div>
+          
+          <div class="descripcion">
+            <p>1.Familia en escocia</p>
+            <p> 2.Tristeza y dolor por algo</p>
+            <p> 3.Termino algo definitivamente </p>
+            <p> 4.El que torea</p>
+          </div>
+
+          <div class="pista">
+              <button>Pista</button>
+          </div>
+        </div>
+
+        <div id="cookies"></div>
+
+    </body>
+</html>
