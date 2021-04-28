@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="./script.js"></script>
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <title>Pasatiempo en cascada</title>
     </head>
@@ -11,116 +12,117 @@
         <div class="menuDesplegable">
           <ul>
             <li><a href="#crearPasatiempo" onclick="limpiarPasatiempo()">Crear nuevo pasatiempo vac&iacuteo</a></li>
-            <li><a href="#guardarEstado">Guardar estado actual del pasatiempo</a></li>
-            <li><a href="#recuperarEstado">Recuperar estado del pasatiempo</a></li>
+            <li><a href="#guardarEstado" onclick="guardarEstado()">Guardar estado actual del pasatiempo</a></li>
+            <li><a href="#recuperarEstado" onclick="cargarEstado()">Recuperar estado del pasatiempo</a></li>
+            <li><a href="#borrarAlmacenamiento" onclick="limpiarAlmacenamiento()">Borrar pasatiempo guardado</a></li>
+
             <li style="float:right" onclick="acercaDe()"><a href="#about">Acerca de:</a></li>
           </ul>
         </div>
 
         <div class="noMenu">
           <div class="juego" id="juego">
-            <table width="400" height="400px"; border="1" cellspacing="2" cellpadding="2" bgcolor="#ffffff" id="table">
+            <table width="400" height="400px"; border="1" cellspacing="2" cellpadding="2" id="table">
               <form id="datos">
                 <tr>
-                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra1P1"></td>
-                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra2P1"></form></td>
-                  <td><input type="text" onchange="comprobarPalabra()" width="25px" id="letra3P1"></td>
-                  <td><form id="letra4P1"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  id="letra2P1" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P1"   onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P1"   onchange="comprobarPalabra(id)" maxlength="1"></td>
                   <td>1</td>
 
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P2"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P2"  onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P2"  onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P2" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P2" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P3"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P3" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P3" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P3" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra4P3" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P4"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P4" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra2P4" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P4" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P4" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P5"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P5" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra2P5" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra3P5" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P5" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P6"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P6" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P6" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P6" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P6" onchange="comprobarPalabra(id)" maxlength="1"></td>
                   <td>2</td>               
                 </tr> 
                 <tr>
-                  <td><form id="letra1P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P7"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra4P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra5P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P7" onchange="comprobarPalabra(id)" maxlength="1"></td>
                   <td>3</td>               
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P8"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra5P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P8" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P9"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra5P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P9" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P10"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra5P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P10" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P11"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra5P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P11" onchange="comprobarPalabra(id)" maxlength="1"></td>
                 </tr>
     
                 <tr>
-                  <td><form id="letra1P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra2P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra3P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra4P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra5P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
-                  <td><form id="letra6P12"><input type="text" onchange="comprobarPalabra()" width="25px"></form></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra1P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra2P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra3P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra4P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1"  id="letra5P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
+                  <td><input type="text"  onchange="comprobarPalabra(id)" maxlength="1" id="letra6P12" onchange="comprobarPalabra(id)" maxlength="1"></td>
                   <td>4</td>               
                 </tr> 
-            </form>
+              </form>            
             </table>
           </div>
           
@@ -132,9 +134,9 @@
           </div>
 
           <div class="pista">
-              <button>Pista</button>
+              <form><input type="text" id="pista"></form>
+              <button onclick="getPista()">Pista</button>
           </div>
-        </div>
 
         <div id="cookies"></div>
 

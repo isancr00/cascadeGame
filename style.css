@@ -36,8 +36,13 @@ ul {
 
 
 
+
 .juego{
  float: left;
+}
+
+.texto{
+  color: white;
 }
 
   
