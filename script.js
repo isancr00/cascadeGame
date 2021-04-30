@@ -114,7 +114,11 @@ function estaEnDiccionario(palabraActual){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            texto = decode_utf8(this.responseText);
+            texto = this.responseText;
+
+            texto = texto.split("\n");
+            
+            console.log(texto)
 
             if(!texto.includes(palabraActual.toLowerCase())){
                 alert("La palabra no está contenida en el diccionario")
@@ -127,9 +131,6 @@ function estaEnDiccionario(palabraActual){
    
 }
 
-function decode_utf8(s) {
-    return decodeURIComponent(escape(s));
-  }
 
 function guardarEstado(){
     var cookies = document.getElementById("cookies").textContent;
