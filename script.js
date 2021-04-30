@@ -32,6 +32,44 @@ function comprobarPalabra(id){
 
 }
 
+function comprobarCompleto(){
+    var form = document.getElementById("datos");
+
+    for(var i=0;i<form.length;i++){
+        if(form[i].value == ""){
+            return false;
+        }
+    }
+    
+    if(isCorrecto()){
+        alert("El crucigrama es correcto");
+    }else{
+        alert("El crucigrama presenta errores");
+    }
+
+    return true;
+
+}
+
+function isCorrecto(){
+    var devuelve = true;
+    var correcto = ["clan", "cian", "nací", "nace", "cena", "pena", "remato", "remoto", "motero", "lotero", "tolero", "torero"];
+
+    for(var i=0;i<12;i++){
+        var id = "letra1P" + (i+1);
+        var palabra = construirPalabra(id);
+
+        if(correcto[i] == palabra){
+            devuelve = true;
+        }else{
+            return false;
+        }
+    }
+
+    return devuelve;
+
+}
+
 function construirPalabra(id){
     var idString = id.toString();
     var letraString = idString.charAt(5);
@@ -55,7 +93,19 @@ function construirPalabra(id){
             var palabraAux = "letra" + (i+1) + "P" + palabra
             palabraActual += document.getElementById(palabraAux.toString()).value;
         }
+    }else{
+        for(var i=0;i<letra;i++){
+            var palabraAux = "letra" + (i+1) + "P" + palabra;
+            palabraActual += document.getElementById(palabraAux.toString()).value;
+        }
+        
+        for(var i=letra;i<6;i++){
+            var palabraAux = "letra" + (i+1) + "P" + palabra;
+            palabraActual += document.getElementById(palabraAux.toString()).value;
+        }
+
     }
+
     return palabraActual;
 }
 
@@ -64,9 +114,9 @@ function estaEnDiccionario(palabraActual){
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            texto = this.responseText.split("/n");
+            texto = decode_utf8(this.responseText);
 
-            if(!texto.includes(palabraActual)){
+            if(!texto.includes(palabraActual.toLowerCase())){
                 alert("La palabra no está contenida en el diccionario")
             }
         }
@@ -76,6 +126,10 @@ function estaEnDiccionario(palabraActual){
     xhr.send();
    
 }
+
+function decode_utf8(s) {
+    return decodeURIComponent(escape(s));
+  }
 
 function guardarEstado(){
     var cookies = document.getElementById("cookies").textContent;
@@ -139,6 +193,27 @@ function palabraCompleta(idString){
                 return false;
             }
         }
+    }else{
+        for(var i=0;i<letra;i++){
+            var palabraAux = "letra" + (i+1) + "P" + palabra;
+
+            if(document.getElementById(palabraAux.toString()).value != ""){
+                completa = true
+            }else{
+                return false;
+            }
+        }
+        
+        for(var i=letra;i<6;i++){
+            var palabraAux = "letra" + (i+1) + "P" + palabra
+
+            if(document.getElementById(palabraAux.toString()).value != ""){
+                completa = true;
+            }else{
+                return false;
+            }
+        }
+
     }
 
     return completa
