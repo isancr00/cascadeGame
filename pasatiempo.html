@@ -7,7 +7,7 @@
         <title>Pasatiempo en cascada</title>
     </head>
 
-    <body onload="preguntaCookies()">
+    <body onload="preguntaCookies(); extraerDiccionario()">
         <h1>PASATIEMPO EN CASCADA</h1>
         <div class="menuDesplegable">
           <ul>
@@ -137,6 +137,7 @@
           <div class="pista">
               <form><input type="text" id="pista"></form>
               <button onclick="getPista()">Pista</button>
+              <p id="palabrasPista">Las palabras del diccionario que contienen esas letras son: </p>
           </div>
 
         <div id="cookies"></div>

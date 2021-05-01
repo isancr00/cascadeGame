@@ -1,3 +1,25 @@
+
+var diccionario = [];
+diccionario.push("nací", "nace", "remato", "tolero");
+
+function extraerDiccionario(){
+    var texto = "";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            texto = this.responseText;
+            texto = texto.split("\n");  
+
+            for(var i=0; i<texto.length;i++){
+                diccionario.push(texto[i]);
+            }
+        }
+    };
+
+    xhr.open("GET", "https://ordenalfabetix.unileon.es/aw/diccionario.txt", true);
+    xhr.send();
+}
+
 function preguntaCookies(){
     var confirmacion = confirm("¿Desea que se almacenen datos locales del pasatiempo? De esta manera, puede guardar y cargar su progreso");
     if(confirmacion){
@@ -110,24 +132,9 @@ function construirPalabra(id){
 }
 
 function estaEnDiccionario(palabraActual){
-    var texto;
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-            texto = this.responseText;
-
-            texto = texto.split("\n");
-            
-            console.log(texto)
-
-            if(!texto.includes(palabraActual.toLowerCase())){
-                alert("La palabra no está contenida en el diccionario")
-            }
-        }
-    };
-
-    xhr.open("GET", "https://ordenalfabetix.unileon.es/aw/diccionario.txt", true);
-    xhr.send();
+    if(!diccionario.includes(palabraActual.toLowerCase())){
+        alert("La palabra no está contenida en el diccionario")
+    }
    
 }
 
@@ -218,4 +225,25 @@ function palabraCompleta(idString){
     }
 
     return completa
+}
+
+
+function getPista(){
+    console.log(diccionario);
+    var letras = document.getElementById("pista").value;
+    var resultado = "Las palabras que contienen esas letras son: \n";
+
+    for(var i = 0; i < diccionario.length; i++){
+        var palabraActual = diccionario[i];
+        if(palabraActual.includes(letras)){
+            resultado += palabraActual;
+            resultado += "\n";
+        }
+    }
+
+    var pestania = window.open();
+    pestania.document.open();
+    contenido = "<!DOCTYPE html><html><head><title>Palabras pista</title></head><body><h1>PISTA SOLICITADA</h1><div><p>" + resultado + "</p></div></body></html>";
+    pestania.document.write(contenido);
+
 }
