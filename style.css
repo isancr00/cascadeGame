@@ -6,6 +6,10 @@ table{
   border: black;
 }
 
+td{
+  width: auto;
+}
+
 h1{
     text-align: center;
     color: black;
